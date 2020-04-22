@@ -1,0 +1,14 @@
+{
+  "name": "cjunitestingfirstsession",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "jest": "^25.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "CodeJourneys",
+  "license": "ISC"
+}
