@@ -7,7 +7,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "cov": "jest --coverage",
+    "test-watch": "jest --watch"
   },
   "author": "CodeJourneys",
   "license": "ISC"
