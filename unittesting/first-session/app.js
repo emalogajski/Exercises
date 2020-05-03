@@ -4,7 +4,7 @@ const STATUS = [
   'Super user',
 ];
 
-const getNumberOfCompletedLessons = (arr) => arr.filter(e => e === 1).length;
+const getNumberOfCompletedLessons = (arr) => arr.filter((e) => e === 1).length;
 
 const getStatus = (arr) => {
   const completedLessons = getNumberOfCompletedLessons(arr.slice(-7));
@@ -17,17 +17,30 @@ const getStatus = (arr) => {
 }
 
 const getLongest = (arr) => {
- // GOOD! Thanks
+  const longestStreakReducer = (positiveStreaks, currentDay) => {
+    if (currentDay) {
+      positiveStreaks[positiveStreaks.length - 1]++
+    } else {
+      positiveStreaks.push(0)
+    }
+    return positiveStreaks
+  }
+  return Math.max(...arr.reduce(longestStreakReducer, [0]))
 };
 
-const runChallenge = (arr) => [
-  getNumberOfCompletedLessons(arr),
-  getLongest(arr),
-  getStatus(arr),
-];
+const runChallenge = (arr) => {
+  if(!arr) {
+    return 'Sorry, wrong argument.';
+  } else if (Array.isArray(arr)) {
+    return [getNumberOfCompletedLessons(arr), getLongest(arr), getStatus(arr)];
+  } else {
+    return 'Sorry, wrong type.';
+  }
+};
 
 module.exports = {
   runChallenge,
   getNumberOfCompletedLessons,
   getStatus,
+  getLongest,
 };

@@ -51,13 +51,13 @@ describe('Learner Activity Challenge', () => {
     expect(res[2]).toEqual('Super user');
   })
 
-  it('returns 5 as longest streakt', () => {
+  it('returns 5 as longest streak', () => {
     const fiveStreak = [0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1];
     const res = app.runChallenge(fiveStreak);
     expect(res[1]).toEqual(5);
   })
 
-  it('returns 6 as longest streakt', () => {
+  it('returns 6 as longest streak', () => {
     const sixStreak = [0, 1, 1, 1, 1, 1, 1, 0, 0, 1];
     const res = app.runChallenge(sixStreak);
     expect(res[1]).toEqual(6);
